@@ -76,7 +76,7 @@
 #define _WIN32_WINNT 0x400
 
 #include "test.h"
-#include <sys/timeb.h>
+//#include <sys/timeb.h>
 
 static pthread_cond_t cv;
 static pthread_mutex_t mutex;
@@ -99,9 +99,11 @@ mythread(void * arg)
 }
 
 #include "../implement.h"
+#include "posix_winec7.h"
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   int i;
   pthread_t t[NUMTHREADS + 1];

@@ -91,7 +91,12 @@ sem_trywait (sem_t * sem)
         {
           (void) pthread_mutex_unlock (&s->lock);
           errno = EINVAL;
-          return -1;
+#ifdef NEED_ERRNO	  
+		  set_errno(EINVAL);
+#else
+		  errno = EINVAL;
+#endif
+		  return -1;
         }
 
       if (s->value > 0)
@@ -108,7 +113,11 @@ sem_trywait (sem_t * sem)
 
   if (result != 0)
     {
-      errno = result;
+ #ifdef NEED_ERRNO	  
+	  set_errno(result);
+#else
+	  errno = result;
+#endif
       return -1;
     }
 

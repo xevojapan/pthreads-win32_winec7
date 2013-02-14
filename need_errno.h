@@ -74,6 +74,7 @@ extern "C" {
 #if (defined(_MT) || defined(_MD) || defined(_DLL)) && !defined(_MAC)
 PTW32_DLLPORT int * __cdecl _errno(void);
 #define errno   (*_errno())
+PTW32_DLLPORT void __cdecl set_errno(int errnoVal);
 #else   /* ndef _MT && ndef _MD && ndef _DLL */
 _CRTIMP extern int errno;
 #endif  /* _MT || _MD || _DLL */

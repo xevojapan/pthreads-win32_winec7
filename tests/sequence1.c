@@ -101,9 +101,10 @@ void * func(void * arg)
 
   return (void *) 0; 
 }
- 
-int
-main()
+
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   pthread_t t[NUMTHREADS];
   pthread_attr_t attr;

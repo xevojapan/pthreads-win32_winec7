@@ -47,8 +47,9 @@
 
 pthread_mutex_t mutex = NULL;
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   assert(mutex == NULL);
 

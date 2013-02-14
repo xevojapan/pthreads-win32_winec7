@@ -48,9 +48,10 @@ void * func(void * arg)
   washere = 1;
   return 0; 
 }
- 
-int
-main()
+
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   pthread_t t;
 

@@ -1,0 +1,16 @@
+XTAGS
+*~
+BuildLog.htm
+pthreads.ncb
+pthreads.suo
+pthread.vcproj.*
+pthreads_winec7.vcproj.*
+tests/Debug.ncb
+tests/Debug.sln
+tests/Debug.suo
+tests/Debug.vcproj
+tests/Debug.vcproj.*
+tests/pthreads_winec7-test/pthreads_winec7-test.vcproj.*
+tests/pthreads_winec7-test/pthreads_winec7-test.ncb
+
+

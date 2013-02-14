@@ -38,6 +38,7 @@
 #ifndef _PTHREAD_TEST_H_
 #define _PTHREAD_TEST_H_
 
+#include "stdlib.h"
 #include "pthread.h"
 #include "sched.h"
 #include "semaphore.h"
@@ -61,7 +62,10 @@
 #define int64_t _int64
 #endif
 
-#if defined(_MSC_VER) && _MSC_VER >= 1400
+#if defined(WINCE)
+#  define PTW32_FTIME(x) winec7_ftime(x);
+#  define PTW32_STRUCT_TIMEB struct timeb
+#elif defined(_MSC_VER) && _MSC_VER >= 1400
 #  define PTW32_FTIME(x) _ftime64_s(x)
 #  define PTW32_STRUCT_TIMEB struct __timeb64
 #elif ( defined(_MSC_VER) && _MSC_VER >= 1300 ) || \

@@ -80,8 +80,9 @@
 
 static pthread_cond_t cv = NULL;
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   assert(cv == NULL);
 

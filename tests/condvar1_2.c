@@ -85,8 +85,9 @@ enum {
 
 static pthread_cond_t cv[NUM_CV];
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   int i, j, k;
   void* result = (void*)-1;
@@ -100,7 +101,8 @@ main()
         }
 
       j = NUM_CV;
-      (void) srand((unsigned)time(NULL));
+//      (void) srand((unsigned)time(NULL));
+        (void) srand((unsigned)GetTickCount(NULL));
 
       /* Traverse the list asynchronously. */
       assert(pthread_create(&t, NULL, pthread_timechange_handler_np, NULL) == 0);

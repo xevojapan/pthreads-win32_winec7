@@ -76,15 +76,17 @@
 #define _WIN32_WINNT 0x400
 
 #include "test.h"
-#include <sys/timeb.h>
+//#include <sys/timeb.h>
 
 pthread_cond_t cv;
 pthread_mutex_t mutex;
 
 #include "../implement.h"
+#include "posix_winec7.h"
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   struct timespec abstime = { 0, 0 };
   PTW32_STRUCT_TIMEB currSysTime;

@@ -108,8 +108,9 @@ thr(void * arg)
 }
 
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   pthread_t t;
   sem_t s;

@@ -45,8 +45,9 @@
 
 #include "test.h"
 
-int
-main(int argc, char * argv[])
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main(int argc, char * argv[])
 {
 	/*
 	 * This should always succeed unless the system has no

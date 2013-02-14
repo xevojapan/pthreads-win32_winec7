@@ -84,11 +84,31 @@ _errno (void)
     }
   else
     {
-      result = (int *)(&self.p->exitStatus);
+      ptw32_thread_t *sp = (ptw32_thread_t *)self.p;
+	  result = &(sp->errnoVal);
+	  //result = (int*)sp->exitStatus;
+	  //result = (int *)(&self.p->exitStatus);
     }
 
   return (result);
 
 }				/* _errno */
+
+void set_errno(int errnoVal){
+  pthread_t self;
+
+  if ((self = pthread_self ()).p == NULL)
+    {
+      /*
+      * Yikes! unable to allocate a thread!
+      * Throw an exception? return an error?
+      */
+    }
+  else
+    {
+      ptw32_thread_t *sp = (ptw32_thread_t *)self.p;
+	  sp->errnoVal = errnoVal;
+    }
+}
 
 #endif /* (NEED_ERRNO) */

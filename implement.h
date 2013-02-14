@@ -175,6 +175,9 @@ struct ptw32_thread_t_
   DWORD dummy[5];
 #endif
   size_t align;			/* Force alignment if this struct is packed */
+#ifdef NEED_ERRNO
+  int errnoVal;
+#endif
 };
 
 
@@ -710,7 +713,9 @@ extern "C"
 #       endif
 #   endif
 #else
+#ifndef WINCE
 #       include <process.h>
+#endif //WINCE
 #   endif
 
 

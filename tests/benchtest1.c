@@ -99,9 +99,9 @@ runTest (char * testNameString, int mType)
           (float) durationMilliSecs * 1E3 / ITERATIONS);
 }
 
-
-int
-main (int argc, char *argv[])
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main (int argc, char *argv[])
 {
   int i = 0;
   CRITICAL_SECTION cs;

@@ -76,6 +76,7 @@
 
 #include <stdlib.h>
 #include "test.h"
+#include <time.h>
 
 enum {
   NUM_CV = 100
@@ -83,8 +84,9 @@ enum {
 
 static pthread_cond_t cv[NUM_CV];
 
-int
-main()
+int _tmain(int argc, _TCHAR* argv[])
+//int
+//main()
 {
   int i, j;
 
@@ -96,7 +98,9 @@ main()
     }
 
   j = NUM_CV;
-  (void) srand((unsigned)time(NULL));
+  //(void) srand((unsigned)time(NULL));
+	(void) srand((unsigned)GetTickCount());
+
 
   do
     {
